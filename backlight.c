@@ -37,7 +37,7 @@ int main(int argc, char *argv[]){
 	FILE *thefile;
 	thefile = fopen("/sys/class/backlight/intel_backlight/brightness", "w");
 	if(thefile==NULL) {
-		printf("Error, cannot open backlight file.\nPlease tye on root.\n");
+		printf("Error, cannot open backlight file.\nPlease try on root again.\n");
 		return EXIT_FAILURE;
 	}
 	fputs(output_num, thefile);
