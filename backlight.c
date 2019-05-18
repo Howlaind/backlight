@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		char *wronginput;
 		backlight_input = strtol(argv[1], &wronginput, 10);
 	/*输入判断，必须为0至10的数字*/
-		if(*wronginput != '\0' || backlight_input>10 || backlight_input<0)
+		if(*wronginput != '\0' || backlight_input > 10 || backlight_input < 0)
 		{
 			printf("Please input a number between 0 and 10.\n");
 			return EXIT_FAILURE;
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 
-	char output_num[4];
+	char output_num[5];
 	sprintf(output_num, "%d\n", index[backlight_input]);
 
 	FILE *thefile;
