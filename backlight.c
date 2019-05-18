@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	if(argc == 2)
 	{
 		char *wronginput;
-		backlight_input = strtol(argv[1], &wronginput, 10);
+		backlight_input = (int) strtol(argv[1], &wronginput, 10);
 	/*输入判断，必须为0至10的数字*/
 		if(*wronginput != '\0' || backlight_input > 10 || backlight_input < 0)
 		{
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 	FILE *thefile;
 	thefile = fopen("/sys/class/backlight/intel_backlight/brightness", "w");
-	if(thefile==NULL) {
+	if( thefile == NULL ) {
 		printf("Error, cannot open backlight file.\nPlease try on root again.\n");
 		return EXIT_FAILURE;
 	}
